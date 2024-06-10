@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@model Tekliftakip.Dto.CartViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+@{
+    var user = await UserManager.GetUserAsync(User);
+    if (user != null)
+    {
+        var userId = user.Id;
+        // Kullanıcı kimliğiyle yapılacak işlemler
+    }
+}
+
+
+<div class="container">
+    <div class="row col-md-10 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <thead>
+                <tr>
+                    <th>Sıra No</th>
+                    <th>Resim</th>
+                    <th>Ürün Adı</th>
+                    <th>Fiyatı</th>
+                    <th>Adedi</th>
+                    <th class="text-center">Teklif Ver</th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Satırlar burada olacak -->
+                @{
+                    int i = 1;
+                }
+                @foreach (var item in Model.CartItems)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td><img src="/Urunler/@item.Image" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt=""></td>
+                        <td>@item.ProductName</td>
+                        <td>@item.Price </td>
+                        <td>@item.Piece</td>
+                         <td><input type="text" class="form-control teklif" /></td>
+                        <td><input type="hidden" value="@user.Id" class="form-control CustomerId" /></td>
+                        <td><input type="hidden" value="@item.ProductId" class="form-control ProductId" /></td>
+                        <td class="text-center"><a class='btn btn-info btn-xs teklif-btn' href="#"><span class="glyphicon glyphicon-edit"></span> Teklif Ver</a></td>
+                    </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

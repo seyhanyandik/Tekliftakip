@@ -1,0 +1,58 @@
+﻿@model List<Tekliftakip.Models.BidCart>
+@{
+    ViewData["Title"] = "BidCompare";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Teklif Karşılaştırma</h1>
+<div class="row">
+    <div class="col-md-8">
+        <form>
+        <div class="form-group">
+            <select  class="form-control aranan" asp-items="ViewBag.ProductList"></select>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger filtreTeklif" value="Ara" />
+        </div>
+        </form>
+
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row col-md-10 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <thead>
+                
+                <tr>
+                    <th>ID</th>
+                    <th>Müşteri Adı</th>
+                    <th>Ürün Adı</th>
+                    <th>Adet</th>
+                    <th>Ücreti</th>
+                    <th>Teklif</th>
+                    <th>Resim</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            @foreach(var item in Model)
+            {
+                
+            
+            <tr class="BidCart">
+                <td>1</td>
+                <td>@item.CustomerId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Piece</td>
+                <td>@item.Price</td>
+                <td>@item.BidPrice</td>
+                <td><img src="@item.Image" height="50" width="50" class="rounded-3"/></td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>
+            }
+            
+        </table>
+    </div>
+</div>
+

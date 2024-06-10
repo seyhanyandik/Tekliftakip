@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekliftakip", "Tekliftakip\Tekliftakip.csproj", "{B06F2037-AA28-4C2E-A03B-297DC2D8B45B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5356591A-F453-412E-A1E1-222072A91555}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B06F2037-AA28-4C2E-A03B-297DC2D8B45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06F2037-AA28-4C2E-A03B-297DC2D8B45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06F2037-AA28-4C2E-A03B-297DC2D8B45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06F2037-AA28-4C2E-A03B-297DC2D8B45B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EE135AF-B9FA-4850-BB93-0F76DC4347EF}
+	EndGlobalSection
+EndGlobal

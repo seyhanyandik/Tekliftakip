@@ -1,0 +1,35 @@
+﻿@model List<Tekliftakip.Models.Slider>
+
+<div class="col-md-12 col-lg-5">
+            <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+            @{
+                int i = 0;
+                string klas = "";
+            }
+            @foreach (var item in Model)
+            {
+                if(i==0){
+                    klas = "active";
+                }
+                else{
+                    klas = " ";
+                }
+            <div class="carousel-item @klas rounded">
+                <img src="/Slider/@item.SliderImage" class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
+                <a href="#" class="btn px-4 py-2 text-white rounded">@item.Header1</a>
+            </div>
+            i++;
+      }
+           
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>

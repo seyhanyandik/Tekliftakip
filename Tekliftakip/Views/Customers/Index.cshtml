@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Tekliftakip.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerNameSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerEMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerAddress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerNameSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerEMail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerAddress)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CustomerId">Düzelt</a> |
+                <a asp-action="Details" asp-route-id="@item.CustomerId">Detay</a> |
+                <a asp-action="Delete" asp-route-id="@item.CustomerId">Silme</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
